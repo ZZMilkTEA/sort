@@ -56,14 +56,14 @@ public class HeapSort extends AbstractSort {
 		array=new int[sortArray.length+1];
 		g_n=array.length-1;
 		
-	for (int i=g_n;i>=1;i--) {
-		this.array[i]=sortArray[i-1];
-		shift_down(i);
-	}
-	for(int k=0;k <= sortArray.length-1;k++){	       
-	            sortArray[ k ] = top();
-	            pop();    
-	        }        
+		for (int i=g_n;i>=1;i--) {
+			this.array[i]=sortArray[i-1];
+			shift_down(i);
+		}
+		for(int k=0;k <= sortArray.length-1;k++){
+					sortArray[ k ] = top();
+					pop();
+				}
 	}	
 	
 	

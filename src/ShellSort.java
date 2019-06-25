@@ -1,7 +1,7 @@
 //ÓÐbug
 
 public class ShellSort extends AbstractSort {
-	public  void sort(){
+	public void sort(){
         if(sortArray == null || sortArray.length <= 1){
             return;
         }
