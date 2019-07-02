@@ -50,10 +50,14 @@ public class LR_BubbleSort extends AbstractSort{
 			   
 			   for(;left+1<=right;) {   
 				   for(int i=left;i<=right;i++)
-					   if (sortArray[i]<=sortArray[left]) {minNumber=sortArray[left];sortArray[left]=sortArray[i];sortArray[i]=minNumber;}
+					   if (sortArray[i]<=sortArray[left]) {
+					   	minNumber=sortArray[left];sortArray[left]=sortArray[i];sortArray[i]=minNumber;
+					   }
 			   left++;  //向右排小
 				   for(int i=right;i>=left;i--)
-					   if (sortArray[i]>=sortArray[right]) {maxNumber=sortArray[right];sortArray[right]=sortArray[i];sortArray[i]=maxNumber;}
+					   if (sortArray[i]>=sortArray[right]) {
+					   	maxNumber=sortArray[right];sortArray[right]=sortArray[i];sortArray[i]=maxNumber;
+					   }
 			   right--;  //向左排大
 			   }
 		}

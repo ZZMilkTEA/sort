@@ -1,25 +1,25 @@
-//有bug
-
 public class ShellSort extends AbstractSort {
 	public void sort(){
         if(sortArray == null || sortArray.length <= 1){
             return;
         }
-        //增量
-        int incrementNum = sortArray.length/2;
-        while(incrementNum >= 1){
-            for(int i = 0;i < sortArray.length; i++){
-                //进行插入排序
-                for(int j = i; j < sortArray.length - incrementNum; j = j + incrementNum){
-                    if(sortArray[j]>sortArray[j + incrementNum]){
-                        int temple = sortArray[j];
-                        sortArray[j] = sortArray[j + incrementNum];
-                        sortArray[j + incrementNum] = temple;
-                    }
+        //初始化增量
+        int gap = 1;
+        while (gap * 3 + 1 < sortArray.length) {
+            gap = gap * 3 + 1;
+        }
+
+        while (gap > 0) {
+            for (int i = gap; i < sortArray.length; i++) {
+                int tmp = sortArray[i];
+                int j = i - gap;
+                while (j >= 0 && sortArray[j] > tmp) {  //若当前向前比较的数比基准大，则移位出空位为基准数插入
+                    sortArray[j + gap] = sortArray[j];
+                    j -= gap;
                 }
+                sortArray[j + gap] = tmp;           //插入
             }
-            //设置新的增量
-            incrementNum = incrementNum / 2;
+            gap = (int) Math.floor(gap / 3);
         }
     }
 }

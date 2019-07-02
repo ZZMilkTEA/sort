@@ -4,9 +4,11 @@ public class SortTest {
 
 		long[] result_time = new long[SORT_TYPE_NUMBER];
 
-		System.out.print("请输入数组长度:");
+		System.out.print("请输入数据数量:");
 		int count= AbstractSort.inputNumber();
-		AbstractSort.createArray(count);
+		System.out.print("请输入数据范围(0~输入数值):");
+		int range= AbstractSort.inputNumber();
+		AbstractSort.createArray(count, range);
 		long before = 0;
 		long after = 0;
 		String[] className = new String[SORT_TYPE_NUMBER];

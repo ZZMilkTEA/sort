@@ -31,6 +31,4 @@ public class FastSort extends AbstractSort {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-
-
 }

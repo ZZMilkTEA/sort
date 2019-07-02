@@ -1,10 +1,8 @@
-
 import java.io.*;
 
 public abstract class AbstractSort {
 	private static int[] originalArray;
 	protected int[] sortArray;
-	private final static int RANGE = 50000;
 	File file=new File("result.txt");
 //	FileOutputStream fos=new FileOutputStream(file);
 	
@@ -24,10 +22,10 @@ public abstract class AbstractSort {
 		return value;
 	}
 	
-	public static void createArray(int count) {     //配合inputNumber方法来创建指定长度的数组,数组元素随机生成
+	public static void createArray(int count,int range) {     //配合inputNumber方法来创建指定长度的数组,数组元素随机生成
 		originalArray =new int[count];
 		for (int i=0;i < originalArray.length;i++) {
-			originalArray[i]=(int)(Math.random()*RANGE);
+			originalArray[i]=(int)(Math.random()*range);
 		}
 	}
 	
