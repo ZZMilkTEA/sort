@@ -2,13 +2,13 @@ public class FastSort extends AbstractSort {
 
     @Override
     public void sort() {
-        quickSort(sortArray, 0, sortArray.length - 1);
+        fastSort(sortArray, 0, sortArray.length - 1);
     }
-    private int[] quickSort(int[] arr, int left, int right) {
+    private int[] fastSort(int[] arr, int left, int right) {
         if (left < right) {
             int partitionIndex = partition(arr, left, right);
-            quickSort(arr, left, partitionIndex - 1);
-            quickSort(arr, partitionIndex + 1, right);
+            fastSort(arr, left, partitionIndex - 1);
+            fastSort(arr, partitionIndex + 1, right);
         }
         return arr;
     }
